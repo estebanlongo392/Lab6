@@ -74,10 +74,10 @@ void initUART9600(void){
 
  void writeTextUART(char* Texto){
  
- uint8_t i;
- for (i=0; Texto[i] !='\0'; i++){			//Empieza en 0 y va hasta el valor que tenga "Texto" en la posicion "i" cuando ya sea nulo para poder aumentar dicho valor
- while (!(UCSR0A & (1<<UDRE0)));		//Se espera a que se vacie el buffer del UDR, si esta vacio se carga el texto
- UDR0 = Texto[i];						//Avanzar al siguiente caracter
+	 uint8_t i;
+	 for (i=0; Texto[i] !='\0'; i++){			//Empieza en 0 y va hasta el valor que tenga "Texto" en la posicion "i" cuando ya sea nulo para poder aumentar dicho valor
+	 while (!(UCSR0A & (1<<UDRE0)));		//Se espera a que se vacie el buffer del UDR, si esta vacio se carga el texto
+	 UDR0 = Texto[i];						//Avanzar al siguiente caracter
  }
  }
 
@@ -89,11 +89,10 @@ void initUART9600(void){
  }
 
  void readUART(uint8_t receivedChar) {
- switch (receivedChar) {
- case '0':
- PORTB = 0;
- PORTB |= (1 << PORTB0);
-
+	switch (receivedChar) {
+		case '0':
+		PORTB = 0;
+		PORTB |= (1 << PORTB0);
 		break;
 		case '1':
 		PORTB = 0;
