@@ -28,7 +28,7 @@ int main(void)
 	sei();
 	
 	
-	writeTextUART("Hola mundo AHHHHHHHHH =) ");
+	writeTextUART("Hola mundo");
 	writeUART(10);	//New line
 	writeUART(13);	//Retorno
 
